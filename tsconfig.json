@@ -1,0 +1,91 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "commonjs",
+    "target": "esnext",
+    // For nodejs:
+    "lib": ["esnext"],
+    "types": ["node"],
+
+    // "allowSyntheticDefaultImports": true,
+
+    // and npm install -D @types/node
+
+    // Other Outputs
+    // "sourceMap": true,
+    // "declaration": true,
+    // "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+    
+    // "noImplicitAny": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   "compilerOptions": {
+//     /* 📁 File Layout */
+//     "rootDir": "./src",
+//     "outDir": "./dist",
+
+//     /* 🌍 Environment Settings */
+//     "module": "NodeNext",
+//     "moduleResolution": "NodeNext",
+//     "target": "ES2022",
+//     "lib": ["ESNext"],
+//     "types": ["node"],
+//     "allowSyntheticDefaultImports": true,
+
+//     /* 📦 Output */
+//     "esModuleInterop": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "resolveJsonModule": true,
+
+//     /* ✅ Strict Mode */
+//     "strict": true,
+//     "noImplicitAny": true,
+
+//     /* ⚡ Performance & Safety */
+//     "skipLibCheck": true,
+//     "isolatedModules": true
+//   },
+//   "include": ["src"],
+//   "exclude": ["node_modules"]
+// }
