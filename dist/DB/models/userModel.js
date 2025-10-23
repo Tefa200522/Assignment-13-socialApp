@@ -3,7 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserModel = void 0;
 const mongoose_1 = require("mongoose");
 const userSchema = new mongoose_1.Schema({
-    name: {
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
         type: String,
         required: true
     },
@@ -14,8 +18,28 @@ const userSchema = new mongoose_1.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    phone: {
+        type: String,
+        required: true
+    },
+    age: {
+        type: Number,
+        required: true
+    },
+    covarImage: [String],
+    profileImage: String,
+    folderId: String,
+    isVerified: {
+        type: Boolean,
+        default: false
+    },
+    chengedCradentialAt: Date,
+    emailotp: {
+        otp: String,
+        expiredAt: Date
+    },
 }, {
     timestamps: true
 });
-exports.UserModel = (0, mongoose_1.model)('users', userSchema);
+exports.UserModel = mongoose_1.models.user || (0, mongoose_1.model)('users', userSchema);

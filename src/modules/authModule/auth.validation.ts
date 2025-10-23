@@ -2,12 +2,14 @@ import z, { email, startsWith } from 'zod';
 
 
 export const signupSchema = z.object({
-    email: z.email(),
-    name: z.string(),
-    password: z.string(),
+    firstName: z. string(),
+    lastName: z. string(),
+    email: z. string(),
+    password: z. string(),
+    age: z.number().optional(),
+    phone : z. string().optional(),
     confirmPassword: z.string()
-})
-    .superRefine((args, ctx) =>{
+}).superRefine((args, ctx) =>{
         if (args.confirmPassword != args.password) {
             ctx.addIssue({
                 code: "custom",
@@ -15,20 +17,13 @@ export const signupSchema = z.object({
                 message: "password must be equal to confirm password"
             })
         }
-        if (!args.email.startsWith('tefa')) {
-            ctx.addIssue({
-                code: "custom",
-                path: ['name'],
-                message: "must start whit 'tefa'"
-            })
-        }
     })
 
 
 
-// .refine((args) =>{
-//     return args.confirmPassword == args.password
-// },{
-//     error: "password must be equal to confirm password",
-//     path: ['password','confirmPassword']
-// })
+
+export const confirmEmailSchema = z.object({
+    email :z.email(),
+    otp : z.string().length(6)
+
+})

@@ -10,4 +10,5 @@ const auth_validation_1 = require("./auth.validation");
 const router = (0, express_1.Router)();
 const authServices = new auth_services_1.AuthServices();
 router.post('/signup', (0, meddileware_validation_1.default)(auth_validation_1.signupSchema), authServices.signUp);
+router.patch('/confirmEmail', (0, meddileware_validation_1.default)(auth_validation_1.confirmEmailSchema), authServices.confirmEmail);
 exports.default = router;

@@ -2,6 +2,7 @@ import express, {  type NextFunction, type Response, type Request} from "express
 import router from "./modules/routes";
 import { IError } from "./utils/errors/types";
 import { DBconnection } from "./DB/config/connectDB";
+import { SendEmail } from "./utils/email/sendEmail";
 
 const app = express()
 
@@ -21,7 +22,6 @@ const bootstrap = async ()=>{
             status: err.statusCode || 500
         })
     })
-
 
 
     app.listen(port,()=>{

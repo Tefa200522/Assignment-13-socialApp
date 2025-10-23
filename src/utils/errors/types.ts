@@ -10,3 +10,24 @@ export class ApplicationError extends Error {
         super(msg , options)
     }
 }
+
+
+export class NotFoundException extends ApplicationError{
+    constructor(msg:string ="not found"){
+        super(msg , 404)
+    }
+}
+
+
+export class OtpExpiredException extends ApplicationError{
+    constructor(msg:string ="otp Expired"){
+        super(msg , 404)
+    }
+}
+
+
+export class NOTValidOtpException extends ApplicationError{
+    constructor(msg:string ="not valid otp"){
+        super(msg , 404)
+    }
+}

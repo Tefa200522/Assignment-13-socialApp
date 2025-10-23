@@ -20,7 +20,7 @@ exports.default = exports.DBconnection;
 // const connectDB = async () =>{
 //     const DB_URI = (process.env.LOCAL_DATA_BASE_URI)
 // await mongoose
-//   .connect(DB_URI)
+//   .connect(LOCAL_DATA_BASE_URI)
 //   .then((conn) => {
 //     console.log(`Database Connected ${conn.connection.host}`);
 //   })
