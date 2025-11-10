@@ -31,3 +31,29 @@ export class NOTValidOtpException extends ApplicationError{
         super(msg , 404)
     }
 }
+
+export class InvalidCredentialsException extends ApplicationError{
+    constructor(msg:string = "invalid credentials"){
+        super(msg , 400)
+    }
+}
+
+
+export class InvalidTokenException extends ApplicationError{
+    constructor(msg:string = "invalid token exception"){
+        super(msg , 400)
+    }
+}
+
+
+export class NotVerifiedException extends ApplicationError{
+    constructor(msg:string = "verified email exception"){
+        super(msg , 400)
+    }
+}
+
+export class InvalidOtpException extends ApplicationError{
+    constructor(msg:string = "invalid otp exception"){
+        super(msg , 400)
+    }
+}

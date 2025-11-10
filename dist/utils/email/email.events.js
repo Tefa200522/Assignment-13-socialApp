@@ -7,6 +7,7 @@ var EMAIL_EVENTS_ENUM;
 (function (EMAIL_EVENTS_ENUM) {
     EMAIL_EVENTS_ENUM["VERIFY_EMAIL"] = "VERIFY_EMAIL";
     EMAIL_EVENTS_ENUM["RESET_EMAIL"] = "RESET_EMAIL";
+    EMAIL_EVENTS_ENUM["RESET_PASSWORD"] = "RESET_PASSWORD";
 })(EMAIL_EVENTS_ENUM || (exports.EMAIL_EVENTS_ENUM = EMAIL_EVENTS_ENUM = {}));
 class EmailEevents {
     emitter;
@@ -24,5 +25,8 @@ exports.EmailEevents = EmailEevents;
 const emitter = new events_1.EventEmitter();
 exports.emailEmitter = new EmailEevents(emitter);
 exports.emailEmitter.subscribe(EMAIL_EVENTS_ENUM.VERIFY_EMAIL, ({ to, subject, html }) => {
+    (0, sendEmail_1.SendEmail)({ to, subject, html });
+});
+exports.emailEmitter.subscribe(EMAIL_EVENTS_ENUM.RESET_PASSWORD, ({ to, subject, html }) => {
     (0, sendEmail_1.SendEmail)({ to, subject, html });
 });

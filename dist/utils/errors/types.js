@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NOTValidOtpException = exports.OtpExpiredException = exports.NotFoundException = exports.ApplicationError = void 0;
+exports.InvalidOtpException = exports.NotVerifiedException = exports.InvalidTokenException = exports.InvalidCredentialsException = exports.NOTValidOtpException = exports.OtpExpiredException = exports.NotFoundException = exports.ApplicationError = void 0;
 class ApplicationError extends Error {
     statusCode;
     constructor(msg, statusCode, options = {}) {
@@ -27,3 +27,27 @@ class NOTValidOtpException extends ApplicationError {
     }
 }
 exports.NOTValidOtpException = NOTValidOtpException;
+class InvalidCredentialsException extends ApplicationError {
+    constructor(msg = "invalid credentials") {
+        super(msg, 400);
+    }
+}
+exports.InvalidCredentialsException = InvalidCredentialsException;
+class InvalidTokenException extends ApplicationError {
+    constructor(msg = "invalid token exception") {
+        super(msg, 400);
+    }
+}
+exports.InvalidTokenException = InvalidTokenException;
+class NotVerifiedException extends ApplicationError {
+    constructor(msg = "verified email exception") {
+        super(msg, 400);
+    }
+}
+exports.NotVerifiedException = NotVerifiedException;
+class InvalidOtpException extends ApplicationError {
+    constructor(msg = "invalid otp exception") {
+        super(msg, 400);
+    }
+}
+exports.InvalidOtpException = InvalidOtpException;

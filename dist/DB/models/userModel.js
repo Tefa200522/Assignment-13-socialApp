@@ -39,6 +39,10 @@ const userSchema = new mongoose_1.Schema({
         otp: String,
         expiredAt: Date
     },
+    passwordotp: {
+        otp: String,
+        expiredAt: Date
+    },
 }, {
     timestamps: true
 });

@@ -40,6 +40,10 @@ const userSchema = new Schema <IUser>({
         otp: String,
         expiredAt : Date
     },
+      passwordotp:{
+        otp: String,
+        expiredAt : Date
+    },
 
 }, {
     timestamps: true

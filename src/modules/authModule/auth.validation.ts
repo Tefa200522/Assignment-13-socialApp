@@ -27,3 +27,13 @@ export const confirmEmailSchema = z.object({
     otp : z.string().length(6)
 
 })
+
+
+export const resendOtpSchema = z.object({
+    email :z.email()
+})
+
+export const loginSchema = z.object({
+    email :z.email(),
+    password:z.string()
+})

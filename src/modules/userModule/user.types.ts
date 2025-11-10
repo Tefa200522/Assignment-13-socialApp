@@ -1,3 +1,4 @@
+import { HydratedDocument } from "mongoose"
 
 
 
@@ -16,5 +17,12 @@ export interface IUser {
     emailotp:{
         otp: string
         expiredAt : Date
+    },
+    passwordotp:{
+        otp: string
+        expiredAt : Date
     }
 }
+
+
+export type HUserDocument = HydratedDocument<IUser> 
